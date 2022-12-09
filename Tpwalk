@@ -10,8 +10,6 @@ local WHeld = false
 local AHeld = false
 local SHeld = false
 local DHeld = false
-_G.tpwalk = true
-_G.tpwalkSpeed = 1
 
 UIS.InputBegan:Connect(function(Begin)
     if Begin.KeyCode == Enum.KeyCode.W then
