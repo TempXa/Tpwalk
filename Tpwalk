@@ -1,0 +1,72 @@
+local run = game:GetService("RunService")
+local players = game:GetService("Players")
+local player = players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+local humanoid = character:WaitForChild("Humanoid")
+local oldHrp = hrp.Position
+local UIS = game:GetService("UserInputService")
+local WHeld = false
+local AHeld = false
+local SHeld = false
+local DHeld = false
+
+UIS.InputBegan:Connect(function(Begin)
+    if Begin.KeyCode == Enum.KeyCode.W then
+        WHeld = true
+    elseif Begin.KeyCode == Enum.KeyCode.A then
+        AHeld = true
+    elseif Begin.KeyCode == Enum.KeyCode.S then
+        SHeld = true
+    elseif Begin.KeyCode == Enum.KeyCode.D then
+        DHeld = true
+    end
+end)
+
+UIS.InputEnded:Connect(function(End)
+    if End.KeyCode == Enum.KeyCode.W then
+        WHeld = false
+    elseif End.KeyCode == Enum.KeyCode.A then
+        AHeld = false
+    elseif End.KeyCode == Enum.KeyCode.S then
+        SHeld = false
+    elseif End.KeyCode == Enum.KeyCode.D then
+        DHeld = false
+    end
+end)
+
+run.RenderStepped:Connect(function()
+    local newHrp = hrp.Position
+    local distance = (oldHrp - newHrp).Magnitude
+    if distance >= 1 and humanoid.MoveDirection.Magnitude > 0 then
+    if _G.tpwalk then
+    if WHeld and AHeld then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(-_G.tpwalkSpeed,0,-_G.tpwalkSpeed)
+        oldHrp = newHrp
+    elseif WHeld and DHeld then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(_G.tpwalkSpeed,0,-_G.tpwalkSpeed)
+        oldHrp = newHrp
+    elseif SHeld and AHeld then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(-_G.tpwalkSpeed,0,_G.tpwalkSpeed)
+        oldHrp = newHrp
+    elseif SHeld and DHeld then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(_G.tpwalkSpeed,0,_G.tpwalkSpeed)
+        oldHrp = newHrp
+    elseif WHeld then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(_G.tpwalkSpeed,0,-_G.tpwalkSpeed)
+        oldHrp = newHrp
+    elseif AHeld then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(-_G.tpwalkSpeed,0,_G.tpwalkSpeed)
+        oldHrp = newHrp
+    elseif SHeld then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,_G.tpwalkSpeed)
+        oldHrp = newHrp
+    elseif DHeld then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(_G.tpwalkSpeed,0,0)
+        oldHrp = newHrp
+    else
+        print("Invalid Key Combo")
+            end
+        end
+    end
+end)
