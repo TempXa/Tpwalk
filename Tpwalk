@@ -55,10 +55,10 @@ run.RenderStepped:Connect(function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(_G.tpwalkSpeed,0,_G.tpwalkSpeed)
         oldHrp = newHrp
     elseif WHeld then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(_G.tpwalkSpeed,0,-_G.tpwalkSpeed)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-_G.tpwalkSpeed)
         oldHrp = newHrp
     elseif AHeld then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(-_G.tpwalkSpeed,0,_G.tpwalkSpeed)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(-_G.tpwalkSpeed,0,0)
         oldHrp = newHrp
     elseif SHeld then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,_G.tpwalkSpeed)
