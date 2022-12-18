@@ -41,28 +41,28 @@ run.RenderStepped:Connect(function()
     if distance >= 1 and humanoid.MoveDirection.Magnitude > 0 then
     if _G.tpwalk then
     if WHeld and AHeld then
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(-_G.tpwalkSpeed,0,-_G.tpwalkSpeed)
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(-_G.tpwalkSpeed * 0.1,0,-_G.tpwalkSpeed * 0.1)
         oldHrp = newHrp
     elseif WHeld and DHeld then
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(_G.tpwalkSpeed,0,-_G.tpwalkSpeed)
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(_G.tpwalkSpeed * 0.1,0,-_G.tpwalkSpeed * 0.1)
         oldHrp = newHrp
     elseif SHeld and AHeld then
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(-_G.tpwalkSpeed,0,_G.tpwalkSpeed)
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(-_G.tpwalkSpeed * 0.1,0,_G.tpwalkSpeed * 0.1)
         oldHrp = newHrp
     elseif SHeld and DHeld then
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(_G.tpwalkSpeed,0,_G.tpwalkSpeed)
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(_G.tpwalkSpeed * 0.1,0,_G.tpwalkSpeed * 0.1)
         oldHrp = newHrp
     elseif WHeld then
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0,0,-_G.tpwalkSpeed)
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0,0,-_G.tpwalkSpeed * 0.1)
         oldHrp = newHrp
     elseif AHeld then
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(-_G.tpwalkSpeed,0,0)
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(-_G.tpwalkSpeed * 0.1,0,0)
         oldHrp = newHrp
     elseif SHeld then
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0,0,_G.tpwalkSpeed)
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0,0,_G.tpwalkSpeed * 0.1)
         oldHrp = newHrp
     elseif DHeld then
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(_G.tpwalkSpeed,0,0)
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(_G.tpwalkSpeed * 0.1,0,0)
         oldHrp = newHrp
     else
         print("Invalid Key Combo")
