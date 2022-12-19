@@ -74,4 +74,5 @@ end)
 game.workspace.PlayerCharacters.ChildAdded:Connect(function(lp)
 if lp == character then
 hrp = character:WaitForChild("HumanoidRootPart")
+    end
 end)
